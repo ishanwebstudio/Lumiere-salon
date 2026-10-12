@@ -757,7 +757,7 @@ document.addEventListener(
     const registration = await navigator.serviceWorker.register('./firebase-messaging-sw.js');
     const messaging = firebase.messaging();
     const token = await messaging.getToken({
-      vapidKey: BL1QfxGu24uD7-5vgHahzzK0T60n8wWKZwQ0vbm7xr1lKIKhmMq7m3rXTMqq8H42oasp47RtGQKjWTOWrnWLw9U
+      vapidKey: 'BL1QfxGu24uD7-5vgHahzzK0T60n8wWKZwQ0vbm7xr1lKIKhmMq7m3rXTMqq8H42oasp47RtGQKjWTOWrnWLw9U'
       serviceWorkerRegistration: registration
     });
     if (token) {
