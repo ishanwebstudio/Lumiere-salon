@@ -755,6 +755,20 @@ document.addEventListener(
     const permission = await Notification.requestPermission();
     if (permission !== 'granted') { console.log('Notification permission not granted.'); return; }
     const registration = await navigator.serviceWorker.register('./firebase-messaging-sw.js');
+
+    // Initialize Firebase on the owner page before using Firebase Messaging.
+    if (!firebase.apps.length) {
+      firebase.initializeApp({
+        apiKey: "AIzaSyCspk25xyFZCZcU_nrsukil2vdOxq0pBIM",
+        authDomain: "ladies-salon-booking.firebaseapp.com",
+        projectId: "ladies-salon-booking",
+        storageBucket: "ladies-salon-booking.firebasestorage.app",
+        messagingSenderId: "350305192103",
+        appId: "1:350305192103:web:a5f9ded7f2300d51d83382",
+        measurementId: "G-RC67B2MR37"
+      });
+    }
+
     const messaging = firebase.messaging();
     const token = await messaging.getToken({
       vapidKey: 'BL1QfxGu24uD7-5vgHahzzK0T60n8wWKZwQ0vbm7xr1lKIKhmMq7m3rXTMqq8H42oasp47RtGQKjWTOWrnWLw9U',
