@@ -650,7 +650,6 @@ function initBookingActions() {
 /* ================================
    CLEAR DEMO BUTTON
 ================================ */
-
 function initClearButton() {
   const clearButton = document.getElementById('clearDemo');
   if (!clearButton) return;
@@ -663,8 +662,9 @@ function initClearButton() {
 
     const confirmed = window.confirm(
       `Delete ALL ${bookings.length} bookings from Supabase?\n\n` +
-      'You said these are all your own test bookings. This cannot be undone.'
+      'This permanently deletes every booking. This cannot be undone.'
     );
+
     if (!confirmed) return;
 
     clearButton.disabled = true;
@@ -672,8 +672,6 @@ function initClearButton() {
     clearButton.textContent = 'Clearing...';
 
     try {
-      // Delete every row in the bookings table. Supabase must have a DELETE RLS policy
-      // for this browser client; otherwise the error is shown and nothing is reported as deleted.
       const { data, error } = await supabaseClient
         .from('bookings')
         .delete()
@@ -682,23 +680,18 @@ function initClearButton() {
 
       if (error) throw error;
 
-      const deletedCount = (data || []).length;
       bookings = [];
-      renderOwner();
-      alert(`Cleared ${deletedCount} booking(s) from Supabase.`);
       await loadBookings();
+      alert(`Deleted ${(data || []).length} booking(s).`);
     } catch (error) {
       console.error('Clear bookings error:', error);
-      alert(
-        'Could not delete bookings. Supabase may need a DELETE policy for the bookings table. No successful deletion was confirmed.'
-      );
+      alert('Delete failed. Check the Supabase DELETE policy and permissions.');
     } finally {
       clearButton.disabled = false;
       clearButton.textContent = originalText;
     }
   });
 }
-
 
 /* ================================
    NOTIFICATION PERMISSION
