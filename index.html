@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LUMIÈRE SALON | Beauty & Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="#home">LUMIÈRE <span>SALON</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#booking">Book</a>
+      <a href="#check">My Booking</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="snaptik_7638752054021868808_v3.mp4" type="video/mp4">
+      </video>
+      <div class="hero-glow glow-one"></div>
+      <div class="hero-glow glow-two"></div>
+      <div class="hero-content reveal active">
+        <p class="eyebrow">BEAUTY • CONFIDENCE • YOU</p>
+        <h1>Beauty begins<br><em>with you.</em></h1>
+        <p class="hero-copy">A premium salon experience for hair, skin, nails and bridal beauty — designed around your time.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#booking">Book an Appointment</a>
+          <a class="btn" href="#services">Explore Services</a>
+        </div>
+        <div class="hero-stats">
+          <span><b>6+</b> Signature services</span>
+          <span><b>4.9★</b> Guest experience</span>
+          <span><b>09–18</b> Daily appointments</span>
+        </div>
+      </div>
+      <div class="scroll-cue">SCROLL <span>↓</span></div>
+    </section>
+
+    <section class="section intro reveal">
+      <div>
+        <p class="eyebrow">OUR PHILOSOPHY</p>
+        <h2>Where self-care becomes <em>your moment.</em></h2>
+      </div>
+      <p>From everyday hair care to bridal transformations, Lumière combines thoughtful service with a calm, modern salon atmosphere.</p>
+    </section>
+
+    <section class="section reveal" id="services">
+      <div class="section-head">
+        <div><p class="eyebrow">OUR SERVICES</p><h2>Choose your <em>experience.</em></h2></div>
+        <p>Carefully designed appointments for the moments that matter — with transparent demo pricing.</p>
+      </div>
+      <div id="servicesGrid" class="grid"></div>
+    </section>
+
+    <section class="section gallery-section reveal" id="gallery">
+      <div class="section-head">
+        <div><p class="eyebrow">SALON MOMENTS</p><h2>A little <em>inspiration.</em></h2></div>
+        <p>A visual glimpse of the Lumière experience.</p>
+      </div>
+      <div class="gallery">
+        <div class="gallery-card gallery-1"><span>Hair Studio</span></div>
+        <div class="gallery-card gallery-2"><span>Signature Nails</span></div>
+        <div class="gallery-card gallery-3"><span>Glow Facial</span></div>
+        <div class="gallery-card gallery-4"><span>Bridal Beauty</span></div>
+        <div class="gallery-card gallery-5"><span>Colour Atelier</span></div>
+        <div class="gallery-card gallery-6"><span>Calm Moments</span></div>
+      </div>
+    </section>
+
+    <section class="section booking-section reveal" id="booking">
+      <div class="section-head single">
+        <div><p class="eyebrow">ONLINE APPOINTMENT</p><h2>Reserve your <em>time.</em></h2></div>
+        <p>Select a service, date and available time. A unique booking code is created instantly for this demo.</p>
+      </div>
+      <form id="bookingForm" class="card">
+        <div class="form-block">
+          <div class="step">01 <span>Service</span></div>
+          <div id="serviceChoices" class="choices"></div>
+        </div>
+        <div class="form-block">
+          <div class="step">02 <span>Date & time</span></div>
+          <div class="row">
+            <label>Date<input id="date" type="date" required></label>
+            <label>Time<select id="time" required></select></label>
+          </div>
+        </div>
+        <div class="form-block">
+          <div class="step">03 <span>Your details</span></div>
+          <div class="row">
+            <label>Full name<input id="name" type="text" placeholder="Your name" required></label>
+            <label>Phone<input id="phone" type="tel" placeholder="07X XXX XXXX" required></label>
+          </div>
+          <label>Email <span class="optional">(required)</span><input id="email" type="email" placeholder="you@example.com" required></label>
+        </div>
+        <button class="btn primary full" type="submit"><span>Confirm Appointment</span><i>→</i></button>
+        <p id="bookingError" class="form-error" role="alert"></p>
+      </form>
+      <div id="confirmation"></div>
+    </section>
+
+    <section class="section check-section reveal" id="check">
+      <div class="section-head single">
+        <div><p class="eyebrow">BOOKING LOOKUP</p><h2>Check your <em>booking.</em></h2></div>
+        <p>Enter your private booking code to see the latest appointment status.</p>
+      </div>
+      <form id="lookupForm" class="lookup card">
+     <input id="code" type="text" placeholder="e.g. 7542K" required>
+        <button class="btn primary" type="submit">Check Booking</button>
+      </form>
+      <div id="result"></div>
+    </section>
+
+    <section class="section final-cta reveal">
+      <div class="cta-panel">
+        <p class="eyebrow">YOUR NEXT MOMENT</p>
+        <h2>Feel good. <em>Look amazing.</em></h2>
+        <a class="btn primary" href="#booking">Reserve Your Appointment →</a>
+      </div>
+    </section>
+  </main>
+
+ <footer><span>LUMIÈRE SALON • Beauty • Wellness • Bridal</span><span>© 2026 Lumière Salon Demo</span></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

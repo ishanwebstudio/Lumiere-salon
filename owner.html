@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lumière Salon | Owner Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body class="dashboard-page">
+  <header>
+    <a class="brand" href="owner.html">LUMIÈRE <span>OWNER</span></a>
+    <a class="back-link" href="index.html">← Customer Website</a>
+  </header>
+  <main class="dashboard section reveal active">
+    <div class="dashboard-head">
+      <div><p class="eyebrow">PRIVATE ADMIN AREA</p><h1>Appointment <em>Dashboard.</em></h1><p class="muted-note">Owner panel. Keep this page private; customer website does not link to it.</p></div>
+      <button class="btn" id="clearDemo" type="button">Clear Demo Data</button>
+    </div>
+    <div id="stats" class="stats"></div>
+    <div class="table-card">
+      <div class="table-top"><h2>Appointments</h2><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="Pending">Pending</button><button class="filter" data-filter="Confirmed">Confirmed</button><button class="filter" data-filter="Cancelled">Cancelled</button></div></div>
+      <div id="list"></div>
+    </div>
+  </main>
+  <script src="owner.js"></script>
+</body>
+</html>
