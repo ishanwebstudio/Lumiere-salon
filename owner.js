@@ -445,10 +445,11 @@ function initSoundSelector() {
     playBookingSound();
   });
 
-  document.getElementById('testSound').addEventListener('click', () => {
-    enableSound();
-    playBookingSound();
-  });
+ document.getElementById('testSound').addEventListener('click', () => {
+  enableSound();
+  enableNotifications();
+  playBookingSound();
+});
 }
 
 
