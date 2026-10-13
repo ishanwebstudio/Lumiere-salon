@@ -367,6 +367,16 @@ function enableSound() {
   }
 }
 
+function enableNotifications() {
+  if (!('Notification' in window)) {
+    alert('Notifications are not supported.');
+    return;
+  }
+
+  Notification.requestPermission().then((permission) => {
+    alert('Notification permission: ' + permission);
+  });
+}
 
 const SOUND_OPTIONS = {
   bell: { name: 'Classic Bell', notes: [[880, 0], [1175, 0.16]], duration: 0.55 },
