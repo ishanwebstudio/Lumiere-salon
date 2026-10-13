@@ -785,6 +785,7 @@ document.addEventListener(
     if (token) {
       localStorage.setItem('salon_fcm_token', token);
       console.log('Firebase FCM token saved locally.');
+      alert('FCM Token: ' + token);
     } else {
       console.warn('No Firebase FCM token was returned.');
     }
