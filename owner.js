@@ -697,15 +697,19 @@ function initClearButton() {
    NOTIFICATION PERMISSION
 ================================ */
 
+
 function requestNotifications() {
+  if (!('Notification' in window)) {
+    console.log('Notifications are not supported.');
+    return;
+  }
 
-  if (
-    'Notification' in window &&
-    Notification.permission === 'default'
-  ) {
-
-    Notification.requestPermission();
-
+  if (Notification.permission === 'default') {
+    Notification.requestPermission().then((permission) => {
+      console.log('Notification permission:', permission);
+    });
+  } else {
+    console.log('Notification permission:', Notification.permission);
   }
 }
 
